@@ -1,0 +1,211 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  background-color: #ffffff; /* Use a custom color if preferred */
+  color: #333333; /* Dark color for text to ensure readability */
+  /* color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb)); */
+}
+
+.playing {
+  width: 300px;
+  height: 20px;
+  border-radius: 0.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  box-sizing: border-box;
+}
+.playing_opp {
+  height: 20px;
+  border-radius: 0.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  box-sizing: border-box;
+  transform: rotate(3.142rad);
+  position: absolute;
+  bottom: 0;
+}
+
+.playing__bar {
+  display: inline-block;
+  width: 2.567px;
+
+  animation: up-and-down 1.3s ease infinite alternate;
+}
+
+@keyframes up-and-down {
+  10% {
+    height: 30%;
+  }
+
+  30% {
+    height: 100%;
+  }
+
+  60% {
+    height: 50%;
+  }
+
+  80% {
+    height: 75%;
+  }
+
+  100% {
+    height: 60%;
+  }
+}
+
+.playing__bar1 {
+  background: linear-gradient(
+    90deg,
+    #73dd24 -1265.13%,
+    #00bbe4 5589.67%,
+    #46d77d 12029.02%
+  );
+}
+
+.playing__bar2 {
+  background: linear-gradient(
+    90deg,
+    #73dd24 -4156.88%,
+    #00bbe4 2697.95%,
+    #46d77d 9137.33%
+  );
+}
+
+.playing__bar3 {
+  background: linear-gradient(
+    90deg,
+    #73dd24 -7590.87%,
+    #00bbe4 -736%,
+    #46d77d 5703.42%
+  );
+}
+
+.playing__bar4 {
+  background: linear-gradient(
+    90deg,
+    #73dd24 -9580.32%,
+    #00bbe4 -2724.47%,
+    #46d77d 3715.87%
+  );
+}
+.playing__bar5 {
+  background: linear-gradient(90deg, #00bbe4 -5434.97%, #46d77d 1004.29%);
+}
+
+.playing__bar5 {
+  background: linear-gradient(90deg, #00bbe4 -5434.97%, #46d77d 1004.29%);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.width-full {
+  width: 98%;
+  position: relative;
+  margin-top: 100px;
+}
+
+.flex-column-gap {
+  column-gap: 50px;
+}
+
+.main-background-color {
+  background-color: rgb(255, 171, 64);
+}
+
+.main-area-margin {
+  margin-bottom: 96px;
+}
+
+/* styles/globals.css */
+.spinner {
+  @apply animate-spin border-4 border-blue-500 border-t-transparent rounded-full w-8 h-8;
+}
+
+.image-container {
+  width: 100%;
+
+  > div {
+    position: unset !important;
+  }
+
+  .image {
+    object-fit: contain;
+    width: 100% !important;
+    position: relative !important;
+    height: unset !important;
+  }
+}
+
+/* styles/globals.css */
+.spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Add more styles for your spinner here */
+}
+
+.pageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.ripler {
+  background-color: rgba(165, 91, 6, 0.3);
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.overlay {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  height: 60px;
+  width: 60px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(125, 244, 102, 0.9);
+  z-index: 3;
+}
+
+.disabled-filter {
+  filter: grayscale(1);
+}
